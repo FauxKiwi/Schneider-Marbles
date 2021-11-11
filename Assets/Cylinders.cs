@@ -13,12 +13,13 @@ public class Cylinders : MonoBehaviour
     
     public void OnSliderChanged(float value)
     {
-        Num = (int) value;
+        Num = (int) value * 2;
 
         foreach (var instance in _instantiated)
         {
             Destroy(instance);
         }
+        _instantiated.Clear();
 
         for (var y = 0; y < Num - 1; ++y)
         {
